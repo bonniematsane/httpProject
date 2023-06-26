@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpSrviceService {
-names: string = "boni,kwazy,vuyi,kat,nceba,thembeka,tshepo";
+  nameURL: string = 'https://api.agify.io?name=bonnie';
+
  
   constructor(private http: HttpClient) { }
 
   getNames():Observable<any>{
-   return this.http.get(this.names)
+   return this.http.get(this.nameURL)
   }
 }

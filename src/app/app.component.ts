@@ -9,16 +9,20 @@ import { HttpSrviceService } from './http-srvice.service';
 
   
  export class AppComponent implements OnInit{
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   
 
   constructor(private httpService: HttpSrviceService ) { }
-
+name: any;
   ngOnInit(): void {
       
   }
   getNamesFromService(){
     this.httpService.getNames().subscribe((naam:any) =>{
-      console.log(naam);
+      this.name=naam.name;
+      console.log(naam.name);
     });
   }
 }
